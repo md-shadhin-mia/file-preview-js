@@ -1,8 +1,9 @@
-const fileInput = document.querySelectorAll('.file-control');
+const fileInputs = document.querySelectorAll('.file-control');
 
 //document content loaded listener
 document.addEventListener('DOMContentLoaded', function () {
-  fileInput.forEach(function (input) {
+  console.log("File found in DOM : ", fileInputs.length);
+  fileInputs.forEach(function (fileInput) {
     //append a file container for preview before upload
     const fileContainer = document.createElement('div');
     fileContainer.id = 'fileContainer';
@@ -12,6 +13,8 @@ document.addEventListener('DOMContentLoaded', function () {
     fileInput.parentNode.appendChild(fileContainer, fileInput);
     //add button
     const buttonDiv = document.createElement('button');
+    //type
+    buttonDiv.type = 'button';
     buttonDiv.innerHTML = '<i class="fas fa-trash-alt"></i>';
     // float right
     buttonDiv.style.float = 'right';
